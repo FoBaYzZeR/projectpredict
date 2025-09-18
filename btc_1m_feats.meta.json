@@ -1,0 +1,55 @@
+{
+  "source_file": "btc_1m_2022_2025.parquet",
+  "output_file": "btc_1m_feats.parquet",
+  "rows": 1579620,
+  "horizon_steps": 60,
+  "threshold_bps": 10.0,
+  "label_mapping": {
+    "0": "Down",
+    "1": "Flat",
+    "2": "Up"
+  },
+  "feature_cols": [
+    "ret_1",
+    "vol_5",
+    "vol_15",
+    "vol_60",
+    "rsi_14",
+    "macd",
+    "macd_sig",
+    "macd_hist",
+    "bb_percB_20",
+    "vol_z_15",
+    "vol_z_60",
+    "vwap_dist_20",
+    "time_sin_m",
+    "time_cos_m",
+    "dow_sin",
+    "dow_cos",
+    "trades",
+    "taker_base",
+    "taker_quote"
+  ],
+  "splits": {
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "train_range": {
+      "start": "2022-08-31 00:00:00",
+      "end": "2024-10-06 20:53:00",
+      "rows": 1105734
+    },
+    "val_range": {
+      "start": "2024-10-06 20:54:00",
+      "end": "2025-03-20 09:56:00",
+      "rows": 236943
+    },
+    "test_range": {
+      "start": "2025-03-20 09:57:00",
+      "end": "2025-08-31 22:59:00",
+      "rows": 236943
+    }
+  }
+}
